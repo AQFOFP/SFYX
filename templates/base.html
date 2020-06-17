@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        {% block title %}
+        
+        {% endblock %}
+    
+        {% load static %}
+		<script src="{% static 'js/jquery-1.12.3.js' %}"></script>
+		<script src="{% static 'js/common.js' %}"></script>
+		<script src="{% static 'js/jquery.cookie.js' %}"></script>
+
+        <link rel="stylesheet" href="{% static 'css/common.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        {% block cssjs %}
+        
+        {% endblock %}
+
+	</head>
+	<body>
+		<div id="top">
+			<div id="head">
+				<span>冷链配送&nbsp;99元顺丰到家&nbsp;送至：</span>
+				<em id="ee"><i>深圳</i><img src="/static/img/up.png" style="width: 12px;"/>
+				<div id="address">
+					<h6>请选择您的收货城市：<img src="/static/img/close.png" style="position: absolute;right: 10px;top: 10px;"/></h6>
+					<hr />
+					<ul>
+					<li>北京</li>
+					<li>上海</li>
+					<li>广州</li>
+					<li>深圳</li>
+					<li>天津</li>
+					<li>苏州</li>
+					<li>杭州</li>
+					<li>南京</li>
+					<li>无锡</li>
+					<li>青岛</li>
+					<li>武汉</li>
+					</ul>
+					<h6>更多城市：</h6>
+					<h6><em>华东：</em><span>上海</span><span>浙江</span><span>江苏</span><span>安徽</span></h6>
+					<h6><em>华南：</em><span>广东</span><span>福建</span><span>海南</span><span>广西</span></h6>
+					<h6><em>华北：</em><span>北京</span><span>天津</span><span>河北</span><span>山东</span><span>山西</span><span>内蒙古</span></h6>
+					<h6><em>华中：</em><span>湖北</span><span>江西</span><span>湖南</span><span>河南</span></h6>
+					<h6><em>东北：</em><span>辽宁</span><span>吉林</span><span>黑龙江</span></h6>
+					<h6><em>西南：</em><span>重庆</span><span>四川</span><span>云南</span><span>贵州</span><span>西藏</span></h6>
+					<h6><em>西北：</em><span>陕西</span><span>甘肃</span><span>宁夏</span><span>青海</span><span>新疆</span></h6>
+				</div>
+				</em>
+				<ul id="ul1">
+					<li>嘿，欢迎来顺丰优选！</li>
+                    {% if user.phone %}
+                       <li><a href="#" style="text-decoration: none; color: red" alt="个人中心">{{ user.username }}</a></li>
+                       <li><a href="{% url 'users:logout' %}">退出</a></li>
+                        <input type="text" hidden value="{{ user.phone }}" id="phone" />
+                    {% else %}
+                        <li><a href="{% url 'users:login' %}">请登录</a></li>
+					    <li><a href="{% url 'users:register' %}">免费注册</a></li>
+                    {% endif %}
+					<li class="li1" id="li1"><a href="#">我的优选<img src="/static/img/up.png" style="width: 12px;"/></a>
+						<ul>
+                            <li><a href="{% url 'carts:cart' %}">我的购物车</a></li>
+							<li><a href="{% url 'orders:orderlist' %}">我的订单</a></li>
+							<li><a href="">我的积分</a></li>
+							<li><a href="">我的收藏</a></li>
+							<li><a href="">我的优选卡</a></li>
+							<li><a href="">我的优惠券</a></li>
+						</ul>
+					</li>
+					<li id="li4"><a href="#" ><img src="/static/img/smallphone.png" style="vertical-align:middle;margin-right: 8px;margin-top:-3px ;" id="img1"/>移动客户端</a>
+						<div id="box">
+							<div>
+								<img src="/static/img/load_code.png" />
+								<img src="/static/img/arrow.png" />
+								<p>扫描我，即可下载</p>
+								<p id="p1">顺丰优选客户端</p>
+							</div>
+							<img src="/static/img/app_iphone.png" style="padding-right: 2px;"/>
+							<img src="/static/img/app_android.png" />
+						</div>
+					</li>
+					<li class="li1"id="li2"><a href="#">帮助中心<img src="/static/img/up.png" style="width: 12px;"/></a>
+						<ul>
+							<li><a href="">购物指南</a></li>
+							<li><a href="">配送服务</a></li>
+							<li><a href="">支付方式</a></li>
+							<li><a href="">售后服务</a></li>
+							<li><a href="">客服邮箱</a></li>
+							<li><a href="">投诉与建议</a></li>
+						</ul>
+					</li>
+					<li class="li1" id="li3"><a href="#">网站导航<img src="/static/img/up.png" style="width: 12px;"/></a>
+						<ul>
+							<li><div class="box">
+								<h1 style="color: #669900;">商品分类</h1>
+								<table>
+									<tr>
+										<td><a href="#">肉类海鲜</a></td>
+										<td><a href="#">术士蛋奶</a></td>
+										<td><a href="#">水果蔬菜</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">酒水饮料</a></td>
+										<td><a href="#">休闲食品</a></td>
+										<td><a href="#">冲调茶饮</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">粮油副食</a></td>
+										<td><a href="#">南北干货</a></td>
+										<td></td>
+									</tr>
+								</table>
+							</div></li>
+							<li><div class="box">
+								<h1 style="color: #fb6400;">特色频道</h1>
+								<table>
+									<tr>
+										<td><a href="#">跨境直发</a></td>
+										<td><a href="#">企业专区</a></td>
+										<td><a href="#">红酒廊</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">寰宇美食</a></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</table>
+							</div></li>
+							<li><div class="box" style="border: none;">
+								<h1 style="color: black;">更多</h1>
+								<p><a href="#">客户端</a>&nbsp;&nbsp;&nbsp;<a href="#">关注我们</a></p>
+								<p>客服电话：4009-111-111</p>
+							</div></li>
+						</ul>
+					</li>
+					<li><a href="#"><img src="/static/img/weibo.png"/></a></li>
+					<li><a href="#"><img src="/static/img/weixin.png"/></a></li>
+				</ul>
+			</div>
+		</div>
+    {% block content %}
+
+    {% endblock %}
+        <div id="bottom">
+			<img src="/static/img/adv.png" />
+		</div>
+		<div id="bottom1">
+			<div class="foot">
+				<div id="connect">
+					<img src="/static/img/foot_logo.png"/>
+					<h1>4009-111-111</h1>
+					<h2>周一至周日8:30-22:00</h2>
+				</div>
+				<table id="service">
+					<thead>
+						<tr>
+							<td>购物指南</td>
+							<td>配送服务</td>
+							<td>支付方式</td>
+							<td>售后服务</td>
+							<td>商家中心</td>
+							<td><a href="#">手机客户端</a></td>
+							<td><a href="#">官方微信</a></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="">积分制度</a></td>
+							<td><a href="">配送政策</a></td>
+							<td><a href="">货到付款</a></td>
+							<td><a href="">退款说明</a></td>
+							<td><a href="">商家规则</a></td>
+							<td rowspan="4"><img src="/static/img/phone_code.png"/></td>
+							<td rowspan="4"><img src="/static/img/weixin_code.png"/></td>
+						</tr>
+						<tr>
+							<td><a href="">会员介绍</a></td>
+							<td><a href="">开箱验货</a></td>
+							<td><a href="">在线支付</a></td>
+							<td><a href="">退换货流程</a></td>
+							<td><a href=""></a></td>
+						</tr>
+						<tr>
+							<td><a href="">购物流程</a></td>
+							<td><a href="">配送运费</a></td>
+							<td><a href="">优选卡</a></td>
+							<td><a href="">退换货政策</a></td>
+							<td><a href=""></a></td>
+						</tr>
+						<tr>
+							<td><a href="">常见问题</a></td>
+							<td><a href="">配送范围</a></td>
+							<td><a href="">发票制度</a></td>
+							<td><a href="">隐私条款</a></td>
+							<td><a href=""></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<hr/>
+			<div class="foot">
+				<img src="/static/img/brand.png" style="padding-right: 10px;"/><img src="/static/img/brand1.png" style="padding-right: 20px;"/>
+			<ul>
+				<li><a href="">关于我们</a></li>
+				<li><a href="">联系我们</a></li>
+				<li><a href="">招聘人才</a></li>
+				<li><a href="">友情链接</a></li>
+				<li><a href="">供应商申请</a></li>
+			</ul>
+			<span>Copyright© 顺丰优选 sfbest.com 版权所有</span>
+			<span>京公网安备11010502026831号&nbsp;<a href="#">京ICP证150325号</a>&nbsp;食品流通许可证SP1101131210068671(1-1)号&nbsp;<a href="#">企业营业执照</a></span>
+			</div>
+
+		</div>
+
+    {% block cart %}
+		<ul id="fast">
+			<li id="li5">
+				<div class="car" id="car2">
+						<div class="no_empty">
+							<h6>满99元顺丰包邮！</h6>
+							<hr style="border-bottom: 1px solid #669801;" />
+							<ul>
+
+							</ul>
+							<p>共有<em id="num1"></em>件商品<i>共计：<span></span>￥<span id="allprice"></span></i></p>
+							<p>总重<em id="all_weight"></em>kg(含包装)</p>
+                            <a href="{% url 'carts:cart' %}"><input style="cursor: pointer" type="button" value="去购物车结算"  class="calculate"/></a>
+						</div>
+						<div class="empty_car" >
+							<img src="/static/img/empty_car.png" />
+
+                            {% if user.phone %}
+                                <p style="margin-top: 10px;">购物车中暂无商品</p>
+                            {% else %}
+                                <p style="margin-top: 10px;">购物车中暂无商品</p>
+                                <p>如您已添加商品，请<a href="{% url 'users:login' %}">登录</a>查看</p>
+                            {% endif %}
+
+						</div>
+				</div>
+			</li>
+			<li id="li6">
+				<div id="box2">
+					<h1>您的浏览记录</h1>
+					<hr style="border-bottom: 1px solid #669801;"/>
+					<p>暂无浏览记录</p>
+					<hr style="border-bottom: 1px dashed #C0C0C0; padding-top: 10px;width: 90%;" />
+				</div>
+			</li>
+			<li id="li7">
+				<div id="box1">
+					<div>
+						<img src="/static/img/load_code.png" />
+						<img src="/static/img/arrow.png" />
+						<p>扫描我，即可下载</p>
+						<p id="p1">顺丰优选客户端</p>
+					</div>
+				</div>
+			</li>
+			<li id="li8"></li>
+		</ul>
+    {% endblock %}
+	</body>
+</html>

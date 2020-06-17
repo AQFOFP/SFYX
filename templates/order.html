@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>首页</title>
+{% endblock %}
+
+{% load static %}
+{% block cssjs %}
+    <link rel="stylesheet" href="{% static 'css/order.css' %}">
+    <script src="{% static 'js/order.js' %} "></script>
+{% endblock %}
+
+{% block content %}
+		<div id="top2">
+			<div id="top22">
+                <a href="{% url 'homes:home' %}"><img src="/static/img/logonew.png" /></a>
+                <div style="width: 300px; height: 50px; color: white; line-height: 50px; text-align: center;  display: inline-block; margin-left: 300px; background: #66CC99" >订单列表</div>
+			</div>
+			
+		</div>
+
+
+        <div class="context" id="context1">
+            {% csrf_token %}
+            <table cellspacing="0">
+                <thead>
+                    <tr style="background: #81A84A">
+
+                        <th>订单编号</th>
+                        <th>商品总数量</th>
+                        <th>订单总金额</th>
+                        <th>订单状态
+                            <select name="status" id="statu">
+                                <option value="1">待支付</option>
+                                <option value="2">未发货</option>
+                                <option value="3">已发货</option>
+                                <option value="4" >已完成</option>
+                            </select>
+                        </th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td><a href="#">{{ order.order_code }}</a></td>
+                        <td>{{ order.total_count }}</td>
+                        <td>￥{{ order.total_amount }}</td>
+                        <td>未支付</td>
+                        <td><div class="pay" style="color: red; background: yellow; margin: 10px; cursor: pointer">支付</div><input type="text" hidden id="orderid" value="{{ order.order_code }}"></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="context" id="context2" >
+        	<div>
+
+                <p><span>该剁手时就剁手！！！　</span><a href="{% url 'homes:home' %}">继续去购物>></a></p>
+
+        	</div>
+        </div>
+
+    <script>
+        $.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+        })
+    </script>
+{% endblock %}
+
+{% block cart %}
+
+{% endblock %}
+

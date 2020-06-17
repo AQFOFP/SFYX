@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/static/css/small_common.css" />
+		<link rel="stylesheet" href="/static/css/register.css" />
+		<script src="/static/js/jquery-1.12.3.js"></script>
+		<script src="/static/js/jquery.idcode.js"></script>
+		<script src="/static/js/register.js"></script>
+		<script src="/static/js/jquery.cookie.js"></script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="head">
+			<img src="/static/img/logo2.png" />
+			<h1>欢迎注册</h1>
+		</div>
+		<div id="content">
+			<h2><span id="span1" class="active1">个人用户</span><em>已有账号，立即<a href="{% url 'users:login' %}">登录</a></em></h2>
+			<div id="person">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <label><span>*</span>账户名：</label><input type="text" id="username" name="username" /><em></em><br />
+                    <label><span>*</span>登录密码：</label><input type="password" id="password" name="password" /><em></em><br />
+                    <i id="i1">安全程度</i>
+                        <ul>
+                            <li>弱</li>
+                            <li>中</li>
+                            <li>强</li>
+                        </ul>
+
+                    <label><span>*</span>确认密码：</label><input type="password" id="repassword" name="password2"/><em></em><br />
+                    <!--如果有css, 一般在某一些节点中需要使用css中的class -->
+                    <label><span>*</span>验证码：</label><input type="text" class ="Txtidcode" class ="txtVerification" style="width:80px;margin-bottom: 35px;"><span class="idcode"></span>
+                    <span class="em1" style="color: #646464;font-size: 12px;">看不清？<span style="color: #669801;font-size: 12px;">换一换</span></span><em></em><br />
+                    <input type="checkbox" checked="checked" /><i id="i2">我已阅读并同意<a href="">《顺丰优选用户注册协议》</a></i><br />
+                    <div style="color: red; margin-left: 50px" id="errmsg"></div>
+                    <input type="button" value="立即注册" class="butn"/>
+                </form>
+				<hr />
+				<p>了解更多>></p>
+			</div>
+
+            <!--企业账户注册-->
+			<div id="enterprise">
+				
+				<div id="enterprise_left">
+					<h6>账户信息</h6>
+					<hr />
+					<dl>
+						<dt><span>*</span>账户名：</dt>
+						<dd><input type="text"/></dd>
+						<dd class="ddd"></dd>
+					</dl>
+					<dl>
+						<dt><span>*</span>登录密码：</dt>
+						<dd><input type="password"/></dd>
+						<dd class="ddd"></dd>
+					</dl>
+					<dl>
+						<dt><span>*</span>确认密码：</dt>
+						<dd><input type="password"/></dd>
+						<dd class="ddd"></dd>
+					</dl>
+					<h6>联系人信息</h6>
+					<hr />
+					<dl>
+						<dt><span>*</span>联系人姓名：</dt>
+						<dd><input type="text"/></dd>
+						<dd class="ddd"></dd>
+					</dl>
+					<dl>
+						<dt><span>*</span>固定电话：</dt>
+						<dd><input type="text"/></dd>
+						<dd class="ddd"></dd>
+					</dl>
+					<dl>
+						<dt><span>*</span>手机：</dt>
+						<dd><input type="text"/></dd>
+						<dd class="ddd"></dd>
+					</dl>
+					<dl>
+						<dt><span>*</span>邮箱：</dt>
+						<dd><input type="text"/></dd>
+						<dd class="ddd"></dd>
+					</dl>
+					<dl>
+						<dt><span>*</span>所在部门：</dt>
+						<dd><select>
+							<option selected="selected">请选择所在部门</option>
+							<option>采购部</option>
+							<option>市场部</option>
+							<option>行政部</option>
+							<option>办公室</option>
+							<option>其他</option>
+							<select></dd>
+						
+					</dl>
+					<h6>公司信息</h6>
+					<hr />
+					<dl>
+						<dt><span>*</span>公司名称：</dt>
+						<dd><input type="text"/></dd>
+						<dd class="ddd"></dd>
+					</dl>
+					<dl>
+						<dt><span>*</span>公司地址：</dt>
+						<dd><select>
+							<option selected="selected">请选择所在省份</option>
+							<option>北京省</option>
+							<option>安徽省</option>
+							<option>山西省</option>
+							<option>江苏省</option>
+							<option>福建省</option>
+							<option>内蒙古自治区</option>
+							<option>广东省</option>
+							<option>海南省</option>
+							<option>新疆维吾尔自治区</option>
+							<option>云南省</option>
+							<option>湖南省</option>
+							<option>湖北省</option>
+							<option>江西省</option>
+							<option>陕西省</option>
+							<option>河南省</option>
+							<option>河北省</option>
+							<option>吉林省</option>
+							<option>黑龙江省</option>
+							<option>辽宁省</option>
+							<option>四川省</option>
+							<option>天津市</option>
+							<option>广西壮族自治区</option>
+							<option>浙江省</option>
+							<option>重庆市</option>
+							<option>上海市</option>
+							<option>宁夏回族自治区</option>
+							<option>香港特别行政区</option>
+							<option>澳门特别行政区</option>
+							<option>台湾省</option>
+							<select></dd>
+							<dd><select>
+							<option selected="selected">请选择所在市</option>
+							<option>吕梁市</option>
+							<option>大同市</option>
+							<option>忻州市</option>
+							<option>太原市</option>
+							<option>晋中市</option>
+							<option>临汾市</option>
+							<option>介休市</option>
+							</select></dd>
+							<dd style="padding-left: 110px;"><input type="text"/></dd>
+							<dd class="ddd"></dd>
+					</dl>
+					<dl>
+						<dt><span>*</span>购买用途：</dt>
+						<dd id="dd1">
+							<input type="checkbox" name="11" />员工福利
+							<input type="checkbox" name="11" />商务馈赠
+							<input type="checkbox" name="11" />商务礼品<br />
+							<input type="checkbox" name="11" />节日送礼
+							<input type="checkbox" name="11" />会务庆典
+							<input type="checkbox" name="11" />日采零需
+						</dd>
+					</dl>
+					<dl>
+						<dt><span>*</span>公司网址：</dt>
+						<dd>
+							<input type="text"/> 
+						</dd>
+						<dd class="ddd"></dd>
+					</dl>
+					<dl>
+						<dt><span>*</span>公司规模：</dt>
+						<dd><select>
+							<option selected="selected">请选择人数</option>
+							<option>0~49</option>
+							<option>50~99</option>
+							<option>100~499</option>
+							<option>500~999</option>
+							<option>1000人以上</option>
+							<select></dd>
+						
+					</dl>
+					<dl>
+						<dt><span>*</span>公司行业：</dt>
+						<dd><select>
+							<option selected="selected">请选择行业</option>
+							<option>金融/银行/投资/基金/证券/保险</option>
+							<option>石油/石化/化工/电气</option>
+							<option>环保/鱼/林/牧</option>
+							<option>金融/教育保险</option>
+							<option>计算机/网络/电子商务/IT</option>
+							<option>环保/鱼/林/牧</option>
+							<option>金融/教育保险</option>
+							<option>计算机/网络/电子商务/IT</option>
+							<option>环保/鱼/林/牧</option>
+							<option>金融/教育保险</option>
+							<option>计算机/网络/电子商务/IT</option>
+							<option>环保/鱼/林/牧</option>
+							<option>金融/教育保险</option>
+							<option>计算机/网络/电子商务/IT</option>
+							<option>环保/鱼/林/牧</option>
+							<option>金融/教育保险</option>
+							<option>计算机/网络/电子商务/IT</option>
+							<option>环保/鱼/林/牧</option>
+							<option>金融/教育保险</option>
+							<option>计算机/网络/电子商务/IT</option>
+							<select></dd>
+						
+					</dl>
+					<dl>
+						<dt><span>*</span>公司性质：</dt>
+						<dd><select>
+							<option selected="selected">请选择性质</option>
+							<option>政府机关/事业单位</option>
+							<option>国营</option>
+							<option>私营</option>
+							<option>外资</option>
+							<option>中外合资</option>
+							<option>其他</option>
+							<select></dd>
+						
+					</dl>
+					<!--如果有css, 一般在某一些节点中需要使用css中的class -->
+				<label><span id="ss">*</span>验证码：</label><input type="text" class ="Txtidcode" class ="txtVerification1" style="width:80px;margin-bottom: 35px;"><span class="idcode"></span>
+				<span class="em1" style="font-size: 12px;color: #646464;">看不清？<span style="font-size: 12px;color: #669801;">换一换</span></span><em id="ee2"></em><br />
+				<input type="checkbox" checked="checked" /><i id="i2">我已阅读并同意<a href="">《顺丰优选用户注册协议》</a></i><br />
+				<input type="button" value="立即注册" class="butn"/>
+				</div>
+				<div id="enterprise_right"></div>
+			</div>
+		</div>
+		<div id="foot">
+			<table>
+				<tr>
+					<td>
+						<ul>
+							<li><a href="">关于我们</a></li>
+							<li><a href="">联系我们</a></li>
+							<li><a href="">招聘人才</a></li>
+							<li><a href="">友情链接</a></li>
+							<li><a href="">供应商申请</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>北京顺丰电子商务有限公司</td>
+				</tr>
+				<tr>
+					<td>北京市公安局顺义分局备案11011302000890号|京ICP备12011349号|企业营业执照</td>
+				</tr>
+				<tr>
+					<td>Copyright© 顺丰优选 sfbest.com 版权所有</td>
+				</tr>
+			</table>
+		</div>
+		</div>
+	</body>
+</html>

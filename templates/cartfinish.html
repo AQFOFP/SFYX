@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>首页</title>
+{% endblock %}
+
+{% load static %}
+{% block cssjs %}
+    <link rel="stylesheet" href="{% static 'css/car.css' %}">
+{% endblock %}
+
+{% block content %}
+		<div id="top2">
+			<div id="top22">
+                <a href="{% url 'homes:home' %}"><img src="/static/img/logonew.png" /></a>
+                <div style="display: inline-block; margin-left: 100px" ><img src="/static/img/step_03.jpg" alt=""></div>
+				<h4>我的购物车<span>送至：</span><em>广东省深圳市南山区</em><i>提示：请选择您的收货区域，查看更准确的信息</i></h4>
+			</div>
+			
+		</div>
+        <div class="context" id="context1">
+            {% csrf_token %}
+            <table cellspacing="0">
+                <thead>
+                    <tr style="background: #81A84A">
+                        <th><input type="checkbox" style="margin-left:20px" id="chooseall" />全选</th>
+                        <th>订单编号</th>
+                        <th>订单总数量</th>
+                        <th>订单总金额</th>
+                        <th>订单状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+            </table>
+
+            <div class="cartfoot">
+                <div class="cartfoottop">
+                    <div class="topleft">
+                        <input type="button" value="删除选中的商品"  id="deletesome"/>
+                        <input type="button" value="清空购物车"  id="deleteall"/>
+                    </div>
+
+                    <div class="topright">
+                        <span>重量总计：<i id="all_weight">0</i>kg（含包装）（不含运费）商品总计：<em>¥</em><em id="allprice">0</em></span>
+                    </div>
+                </div>
+
+                <div class="cartfootbottom">
+                    <h2><input type="button" value="继续购物" class="shop"/>
+                        <input type="button" value="去结算" class="pay"/>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="context" id="context2">
+        	<div>
+                <p><span>成功生成订单！！！</span><a href="{% url 'orders:orderlist' %}">现在就去支付>></a></p>
+
+        	</div>
+        </div>
+{% endblock %}
+
+{% block cart %}
+
+{% endblock %}

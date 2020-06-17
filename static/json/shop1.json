@@ -1,0 +1,79 @@
+[
+	{
+		"img":"/static/img/youxuanbimai1.jpg",
+		"id": 1,
+		"price":1222,
+		"allprice":1222,
+		"name":"Grandma Wilds 祖母的田野 ",
+		"weight":122,
+		"allweight":122,
+		"privilege":"优惠（无）"
+		
+	},
+	{
+		"img":"/static/img/youxuanbimai2.jpg",
+		"id": 2,
+		"price":12,
+		"allprice":12,
+		"name":"四川会理石榴",
+		"weight":1546,
+		"allweight":122,
+		"privilege":"优惠（无）"
+	},
+	{
+		"img":"/static/img/youxuanbimai3.jpg",
+		"id": 3,
+		"price":22,
+		"allprice":22,
+		"name":"金龙鱼 乳玉皇妃大米 ",
+		"weight":156,
+		"privilege":"优惠（无）"
+		
+	},
+	{
+		"img":"/static/img/youxuanbimai4.jpg",
+		"id": 4,
+		"price":122,
+		"allprice":122,
+		"name":"山东红富士6个",
+		"weight":13,
+		"privilege":"优惠（无）"
+	},
+	{
+		"img":"/static/img/youxuanbimai5.jpg",
+		"id": 5,
+		"price":1222,
+		"allprice":1222,
+		"name":"北疆红提",
+		"weight":7,
+		"privilege":"优惠（无）"
+	},
+	{
+		"img":"/static/img/youxuanbimai6.jpg",
+		"id": 6,
+		"price":145,
+		"allprice":145,
+		"name":"COOP 酷欧培罗勒调味酱",
+		"weight":15,
+		"privilege":"优惠（无）"
+	},
+	{
+		"img":"/static/img/youxuanbimai7.jpg",
+		"id": 7,
+		"price":352,
+		"allprice":352,
+		"name":"鸿福堂 芦荟杨枝甘露 ",
+		"weight":8,
+		"privilege":"优惠（无）"
+		
+	},
+	{
+		"img":"/static/img/youxuanbimai8.jpg",
+		"id": 8,
+		"price":13452,
+		"allprice":13452,
+		"name":"babylonstoren好望天界隆德",
+		"weight":165,
+		"privilege":"优惠（无）"
+	}
+]

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="/static/css/small_common.css" />
+		<link rel="stylesheet" href="/static/css/login.css" />
+		<script src="/static/js/jquery-1.12.3.js"></script>
+		<script src="/static/js/jquery.idcode.js"></script>
+		<script src="/static/js/jquery.cookie.js"></script>
+		<script src="/static/js/login.js"></script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="head">
+			<img src="/static/img/logo3.png" />
+			<h1>欢迎登录&nbsp;&nbsp;
+                <a href="{% url 'homes:home' %}" style="text-decoration: none; color: red; font-size: 16px;">暂不登录</a> </h1>
+		</div>
+		<div id="content">
+			<div id="img"><a href="#"><img src="/static/img/login.png"/></a></div>
+			<div id="login">
+                {% if user.phone %}
+                    <h3><p><strong>{{ user.username }}_{{ user.phone }}</strong></p>您已登录
+                        <a href="{% url 'users:logout' %}">点击切换账户</a> </h3>
+                {% else %}
+                    <h3>您还未登录 <span id="to_register">免费注册</span></h3>
+                    <div id="box1">
+                        <ul>
+                            <li style="background: url(/static/img/youxuan.png) no-repeat 12px center; border-bottom: none;">优选账号</li>
+                            {#<li style="background: url(/static/img/shunshoufu.png) no-repeat 5px center;">顺手付账号</li>#}
+                            {#<li style="background: url(/static/img/suyun.png) no-repeat 12px center;">速运账号</li>#}
+                        </ul>
+                        <div id="youxuan" class="box" >
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <dl>
+                                    <dt>手机/验证邮箱/用户名</dt>
+                                    <dd style="position: relative;"><input type="text" class="name" name="phone" required /><div class="wrong" >请输入用户名</div></dd>
+                                </dl>
+                                <dl>
+                                    <dt>登录密码</dt>
+                                    <dd style="position: relative;"><input type="password" class="pwd" name="password" /><div class="wrong">账户名或密码错误</div></dd>
+                                </dl>
+                                <dl>
+                                    <dt></dt>
+                                    <dd ><input type="text" class ="Txtidcode" class ="txtVerification" style="margin-bottom:20px;width:80px;margin-right: 10px;" /><span class="idcode"></span>
+                                        <div class="wrong" style="top: -20px;width: 80px;">验证码错误</div>
+                                    </dd>
+                                </dl>
+                                <dl><dd  class="errmsg" style="color: red; font-size: 18px;"></dd></dl>
+                                <p>忘记密码？</p>
+                                <input type="button" value="登录" class="btn"/>
+                            </form>
+                        </div>
+
+                        <!--顺手付账号-->
+                        <div id="shunzhoufu" class="box" style="display: none;">
+                            <dl>
+                                <dt>手机号</dt>
+                                <dd style="position: relative;"><input type="text" class="name"/><div class="wrong" >请输入用户名</div></dd>
+                            </dl>
+                            <dl>
+                                <dt>登录密码</dt>
+                                <dd style="position: relative;"><input type="password" class="pwd"/><div class="wrong">账户名或密码错误</div></dd>
+                            </dl>
+                            <dl>
+                                <dt></dt>
+                                <dd><input type="text" class ="Txtidcode" class ="txtVerification" style="margin-bottom:20px;width:80px;margin-right: 10px;" /><span class="idcode"></span>
+                                <div class="wrong" style="top: -20px;width: 80px;">验证码错误</div>
+                            </dl>
+
+                            <input type="button" value="登录" class="btn"/>
+                            <p>登录即视为同意<a href="">《联合登录授权协议》</a></p>
+                        </div>
+
+                        <!--速运账号-->
+                        <div id="suyun" class="box" style="display: none;">
+                                <dl>
+                                <dt>手机/验证邮箱/用户名</dt>
+                                <dd style="position: relative;"><input type="text" class="name"/><div class="wrong" >请输入用户名</div></dd>
+                            </dl>
+                            <dl>
+                                <dt>登录密码</dt>
+                                <dd style="position: relative;"><input type="password" class="pwd"/><div class="wrong">账户名或密码错误</div></dd>
+                            </dl>
+                            <dl>
+                                <dt></dt>
+                                <dd><input type="text" class ="Txtidcode" class ="txtVerification" style="margin-bottom:20px;width:80px;margin-right: 10px;" /><span class="idcode"></span>
+                                <div class="wrong" style="top: -20px;width: 80px;">验证码错误</div>
+                            </dl>
+
+                            <input type="button" value="登录" class="btn"/>
+                            <p>登录即视为同意<a href="">《联合登录授权协议》</a></p>
+                        </div>
+                {% endif %}
+				</div>
+			<div id="box2">
+				<dl>
+					<dt>合作网站账户登录：</dt>
+					<dd>
+						<ul>
+							<li><a href="">QQ</a></li>
+							<li><a href="">新浪微博</a></li>
+							<li><a href="">腾讯微博</a></li>
+							<li><a href="">支付宝</a></li>
+						</ul>
+					</dd>
+				</dl>
+			</div>	
+			</div>
+		</div>
+		<div id="foot">
+			<table>
+				<tr>
+					<td>
+						<ul>
+							<li><a href="">关于我们</a></li>
+							<li><a href="">联系我们</a></li>
+							<li><a href="">招聘人才</a></li>
+							<li><a href="">友情链接</a></li>
+							<li><a href="">供应商申请</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>北京顺丰电子商务有限公司</td>
+				</tr>
+				<tr>
+					<td>北京市公安局顺义分局备案11011302000890号|京ICP备12011349号|企业营业执照</td>
+				</tr>
+				<tr>
+					<td>Copyright© 顺丰优选 sfbest.com 版权所有</td>
+				</tr>
+			</table>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+@charset "utf-8";
+body{background: #f5f5f5;}
+#container h2{font-size:16px;font-weight: 100;margin-left: 30%;line-height: 40px;}
+#container h2 span{margin-right: 10px;display: block;width: 164px;float: left;background: #fff;text-align: center;border: 1px solid silver;}
+#container h2 .active1{border-bottom: none;}
+#container h2 .active2{background: #c4c2c2;line-height: 30px;margin-top: 10px;}
+#container h2 em{font-size: 12px;font-style: normal;float: right;}
+#container a{text-decoration: none;color: #76AB25;}
+/*-------------------------------#container #person----------------------------------*/
+#container #person{float: left;width: 100%;border: 1px solid silver;padding: 40px 20px 40px 70px ;color: #646464;background: url(../img/register_background.png) #fff no-repeat right center;}
+#person input[type="text"],#person input[type="password"]{height: 35px;border: 1px solid silver;width: 270px;}
+#person li{list-style:none;float: left;background: #C0C0C0;color: #fff;width: 40px;margin-right: 5px;}
+#person ul{float: left;width: 75%;height: 34px;margin-top: 12px;text-align: center;font-size: 12px;}
+#person #i1{display: block;float: left;width: 5%;height: 45px;font-size: 12px;font-style: normal;padding-left: 150px;line-height: 40px;}
+#person span{color: red;}
+#person label{padding-right:10px ;text-align: right;line-height: 40px;width: 100px;display:inline-block;}
+#person #username{margin-bottom: 30px;}
+#person #repassword{margin-bottom: 30px;}
+#person input[type=checkbox]{float: left;margin-left:110px;}
+#container #i2{font-size: 12px;color: #979797;font-style: normal;}
+#person em{line-height: 35px;font-size: 12px;color: #979797;font-style: normal;padding-left: 20px;}
+#container  .Txtidcode{}
+#container #em1{padding-left: 0;}
+#container .butn{border:none;border-radius:4px;margin-left:100px;margin-top:30px;width: 270px;height: 35px;background: #669801;color: #FFFFFF;font-size: 16px;line-height: 35px;text-align: center;}
+#container #em1 span{color: #669801;cursor: pointer;}
+#person hr{border-bottom: 1px solid #F1DEFF;margin-top: 35px;}
+#person p{padding-left:20px;line-height: 45px;height:40px;font-size: 12px;color: #669801;background: url(../img/laba.png) no-repeat left center;}
+
+/*-------------------------------#container #person----------------------------------*/
+#enterprise{color: #646464;display:none;float: left;width: 100%;border: 1px solid silver;padding: 40px 20px 40px 70px ;background: #fff;font-size: 14px;}
+#enterprise_left{width: 60%;float: left;}
+#enterprise_left h6{color: #232323;line-height: 40px;}
+#enterprise_left hr{border-top: 1px dashed silver;}
+#enterprise_left dl{width: 100%;float: left;line-height: 36px;padding: 10px;color: #646464;}
+#enterprise_left dl span{color: red;}
+#enterprise_left dt{width: 18%;float: left;text-align: right;}
+#enterprise_left dd{float: left;}
+#enterprise_left input[type=text],#enterprise_left input[type=password]{width: 270px;height: 36px;border: 1px solid silver;}
+#dd1 {font-size: 12px;}
+#dd1 input[type=checkbox]{padding: 0 5px;}
+#enterprise #enterprise_left #ss{color: red;}
+#enterprise #enterprise_left label{padding-left: 60px;}
+#enterprise_left .ddd{width: 200px;font-size: 12px;line-height: 20px;}
+#enterprise_left input[type=checkbox]{margin-left: 120px;}
+#enterprise_left #ee2{font-style: normal;padding-left: 10px;font-size: 12px;}
+
+

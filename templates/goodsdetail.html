@@ -1,0 +1,352 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>商品详情</title>
+{% endblock %}
+
+{% load static %}
+{% block cssjs %}
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <script src="{% static 'js/detail.js' %} "></script>
+{% endblock %}
+
+{% block content %}
+		<div id="top1">
+
+			<div id="header">
+                <a href="{% url 'homes:home' %}"><img src="/static/img/logo.png" id="logo" /></a>
+
+				<div id="search">
+					<input type="text" placeholder="月饼" /><input type="button" value="搜索" />
+					<ul>
+						<li>
+							<a href="#">大闸蟹</a>
+						</li>
+						<li>
+							<a href="#">牛排</a>
+						</li>
+						<li>
+							<a href="#">牛奶</a>
+						</li>
+						<li>
+							<a href="#">石榴</a>
+						</li>
+						<li>
+							<a href="#">酸奶</a>
+						</li>
+						<li>
+							<a href="#">白虾</a>
+						</li>
+						<li>
+							<a href="#">大米</a>
+						</li>
+						<li>
+							<a href="#">猕猴桃</a>
+						</li>
+						<li>
+							<a href="#">海外直采</a>
+						</li>
+					</ul>
+				</div>
+				<ul id="nav">
+					<li>
+						<a href="#" id="all">精选商品分类</a>
+					</li>
+					<li>
+						<a href="#" id="a1">首页</a>
+					</li>
+					<li>
+						<a href="#">优选生鲜</a>
+					</li>
+					<li>
+						<a href="#">全球美食</a>
+					</li>
+					<li>
+						<a href="#">优选厨房</a>
+					</li>
+					<li>
+						<a href="#">新品尝鲜</a>
+					</li>
+					<li>
+						<a href="#">优选国际</a>
+					</li>
+					<li>
+						<a href="#">企业专区</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+
+			<div class="container">
+                {% csrf_token %}
+                <h1 class="hh"><a href="#" class="a0">{{ goods.goodstype.typename }}</a>><a href="{% url 'homes:goodsdetail' goods.id %}">{{ goods.goodsname }}</a></h1>
+				<div class="merchandise">
+					<div class="merch_left">
+						<a  id="a_up"><img src="/static/img1/a_up.png" /></a>
+						<a  id="a_down"><img src="/static/img1/a_down.png" /></a>
+						<div id="box9">
+							<ul class="uu">
+                                <li class="lii"><img class="goodsImg" src="{{ goods.goodsimg }}" alt=""></li>
+                                {% if goodssmalls %}
+                                    {% for goodssmall in goodssmalls %}
+                                        <li class="lii"><img src="{{ goodssmall }}" alt=""></li>
+                                    {% endfor %}
+                                {% endif %}
+							</ul>
+						</div>
+						
+						<div class="middle_img">
+							<div id="smallImg" style="background: url({{ goods.goodsimg }}) no-repeat">
+								<div id="smallArea"></div>
+							</div>
+						</div>
+						<div id="bigArea" style="">
+							<img id="bigImg" src="{{ goods.goodsimg }}" />
+						</div>
+						<div class="introduce">
+							<h2>
+                                <span class='tab'>自营</span>
+                                <i style='font-style:normal' class='goodsName'>{{ goods.goodsname }}</i>
+                            </h2>
+                            <h3>
+                                <span>优选价<em style='font-style:normal;font-size:40px'>￥</em></span>
+                                <em style='font-style:normal' class='goodsPrice'>{{ goods.price }}</em>
+                            </h3>
+                            <p>促销信息：
+                                <span class='tab'>{{ goods.privilege }}</span>
+                                <span style='display:none' class='goodsId'>{{ goods.id }}</span>
+                                <span style='display:none' class='goodsWeight'>{{ goods.weight }}</span>
+                                <span style='display:none' class='goodsAllprice'>{{ goods.allprice }}</span>
+                                <span style='display:none' class='goodsAllweight'>{{ goods.allweight }}</span>
+                                <span style='' class='goodsPrivilege'>{{ goods.privilege }}</span>
+                            </p>
+                            <p style='padding-left:60px ;'>送至：<i>广东省深圳市福田区</i>预计48小时内为您送达</p>
+							<hr />
+							<div id="num">
+								<input type="text" value="1"  id="text" readonly/>
+								<input type="button" value="+"  id="btn1"/>
+								<input type="button" value="-" id="btn2"/>
+							</div>
+							<input type="button" value="加入购物车" id="go_car" />
+							<input type="button" value="一键购买" id="to_pay" />
+							<input type="button" id="look_code" />
+						</div>
+						<div id="enjoy">
+							<ul>
+								<li>
+									<a href=""><img src="/static/img1/enjoy_0.png" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="/static/img1/enjoy_4.png" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="/static/img1/enjoy_3.png" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="/static/img1/enjoy_2.png" alt="" /></a>
+								</li>
+								<li>
+									<a href=""><img src="/static/img1/enjoy_1.png" alt="" /></a>
+								</li>
+							</ul>
+							<span class="like">
+								收藏商品
+							</span>
+						</div>
+					</div>
+					<div class="merch_right">
+						<img src="/static/img1/promise.png" />
+						<p>品牌：茅台</p>
+						<p>产地：中国</p>
+						<p>规格：500ml</p>
+						<p>重量：1.1kg （含包装）</p>
+						<p>商品编号：1400008791</p>
+						<p id="p10"><span>优选卡</span><i>支持优选卡支付</i></p>
+						<p id="p11">本品不支持无理由退换货</p>
+						<hr />
+						<p id="p12"><i>好评度：</i><span>         </span><em>99%</em></p>
+						<p id="p13">47609 条评论</p>
+						<div id="comment">sf145881801122088：正品，很好很好.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="content">
+
+        	<div class="container">
+            	<div id="con_left">
+                	<div class="left_box">
+                        <h6>相关分类</h6>
+                        <p>白酒</p>
+                        <table>
+                            <tr>
+                                <td><a href="">茅台</a></td>
+                                <td><a href="">五粮液</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="">剑南春</a></td>
+                                <td><a href="">洋河</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="">郎酒</a></td>
+                                <td><a href="">泸州老窖</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="">汾酒</a></td>
+                                <td><a href="">牛栏山</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="">其他品牌</a></td>
+                                <td><a href=""></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="left_box">
+                        <h6>相关品牌</h6>
+                        <table>
+                            <tr>
+                                <td><a href="">茅台</a></td>
+                                <td><a href=""></a></td>
+                            </tr>
+                        </table>
+                        </div>
+                    <div class="left_box">
+                        <h6>浏览此商品的顾客还购买了</h6>
+                        <div class="sh">
+                        <img src="/static/img/00000009.jpg" class="img121"/>
+                        <p class="ppp">赖茅传承53度 500ml</p>
+                        <p class="ppp1">￥233</p>
+                        </div>
+                        <div class="sh">
+                        <img src="/static/img/00000009.jpg" class="img121"/>
+                        <p class="ppp">赖茅传承53度 500ml</p>
+                        <p class="ppp1">￥233</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="con_right">
+
+                    <div id="mesg">
+                    	<div id="mesg1">
+		                        	<h3 id="h3"><span>商品介绍</span><span>售后服务</span><span>评价（24343）</span><span>饮食文化</span></h3>
+		                        <table>
+		                            <tr>
+		                                <td>存储条件：常温</td><td>重量(含包装)：1.1（kg）</td>
+		                            </tr>
+		                             <tr>
+		                                <td>销售单位：瓶</td><td>产地：中国</td>
+		                            </tr>
+		                             <tr>
+		                                <td>规格：500ml</td><td></td>
+		                            </tr>
+		                             <tr>
+		                                <td colspan="2">温馨提示：
+		    顺丰优选所售商品均经过严格的供应商资质审查、商品审查、入库全检、出货全检流程。由于部分商品存在厂家更换包装、不同批次、不同生产日期、不同生产工厂等情况，导致商品实物与图片存在微小差异，因此请您以收到的商品实物为准，同时我们会尽量做到及时更新，由此给您带来不便敬请谅解，谢谢！
+		    如果您发现商品信息存在问题，欢迎纠错</td>
+		                            </tr>
+		                        </table>
+		                        <p>如果您发现商品信息存在问题，<a href="">欢迎纠错</a></p>
+		                        <img src="/static/img1/quangonglue.jpg" />
+		                        <img src="/static/img1/cea3862dc3cc5c14b5bb62d29c2c33be.gif" />
+		                        <p class="ppp3">由于部分商品包装更换较为频繁、以及商品批次不同导致生产日期、酒水年份、产地发生变更，请您以收到的商品实物为准。</p>
+		                        <p class="ppp3">我们会尽量做到及时更新，由此给您带来不便敬请谅解，谢谢！</p>
+		                  		<img src="/static/img1/121123.png"/>
+		                        <img src="/static/img1/12321121.png"/>
+		                        <img src="/static/img1/122.png"/>
+		                        <img src="/static/img1/1212.png"/>
+		                        <img src="/static/img1/1232232.png"/>
+		                        <img src="/static/img1/122332433.jpg"/>
+		                        <img src="/static/img1/8979.png"/>
+		                        <img src="/static/img1/123332232.png"/>
+		                        <img src="/static/img1/1267686.png"/>
+		                        <img src="/static/img1/232232.png"/>
+		                        <img src="/static/img1/1232432.png"/>
+		                        <img src="/static/img1/125576.png"/>
+		                        <img src="/static/img1/123978.png"/>
+		                        <img src="/static/img1/1232234.png"/>
+		                        <img src="/static/img1/1223212.png"/>
+                        </div>
+                        
+                        <div id="mesg2">
+                        	<div class="user_comment">
+                        		<h3>用户评价</h3>
+                        		<ul>
+                        			<li><p id="p7">好评度<span class="span9">99%</span></p></li>
+                        			<li>
+                        				<p>好评<i id="i111"></i>99%</p>
+                        				<p>中评<em></em>0%</p>
+                        				<p>差评<em><i id="i3"></i></em>1%</p>
+                        			</li>
+                        			<li>
+                        				<p>购买过商品，参与评价晒单，可获得积分哦~~</p>
+                        				<p><input type="button" value="马上评价" id="review"><a id="span4" href="">[如何获取积分]</a></p>
+                        			</li>
+                        		</ul>
+                        	</div>
+                        	<div id="user_review">
+                        		<h1><span>全部评价（1232324）</span><span>好评（12322）</span><span>中评（123）</span><span>差评（34）</span><span>有晒单（232）</span></h1>
+                        		<div class="users">
+                        			<dl>
+                        				<dt>
+                        					<img src="/static/img1/head.png" />
+                        					<p>普通会员</p>
+                        					<p>sf34323532543</p>
+                        				</dt>
+                        				<dd>
+                        					<h2><span>2016-04-08 17:16</span></h2>
+                        					<p>评价内容：正品，很好很好..</p>
+                        					<input type="button" value="赞" />
+                        				</dd>
+                        			</dl>
+                        		</div>
+
+                        		<div class="users" id="last" >
+                        			<dl>
+                        				<dt>
+                        					
+                        				</dt>
+                        				<dd>
+                        					<h5><a href="#">[查看全部评价]</a></h5>
+                        					<input type="button" value="下一页>" style="width: 60px;" />
+                        					<input type="button" value="5465" style="width: 50px;" />
+                        					<input type="button" value="..." />
+                        					<input type="button" value="3" />
+                        					<input type="button" value="2" />
+                        					<input type="button" value="1" />
+		                        			<input type="button" value="<上一页" style="width: 60px;"/>
+		         	
+                        				</dd>
+                        			</dl>
+                        		</div>
+                        	</div>
+                        </div>
+                        <div id="mesg3">
+                        	<img src="/static/img1/ystitle.jpg" />
+                        	<div id="lunbo_2">
+                        			<div id="box">
+                        				<ul id="list">
+										<li><img src="/static/img1/yspic7801.jpg" /></li>
+										<li><img src="/static/img1/yspic7802.jpg" /></li>
+										<li><img src="/static/img1/yspic7803.jpg" /></li>
+										<li><img src="/static/img1/yspic7804.jpg" /></li>
+										<li><img src="/static/img1/yspic7805.jpg" /></li>
+										<li><img src="/static/img1/yspic7806.jpg" /></li>
+									</ul>
+                        			<ul id="list2">
+										<li><img src="/static/img1/lunbo011.png" /></li>
+										<li><img src="/static/img1/lunbo012.png" /></li>
+										<li><img src="/static/img1/lunbo013.png" /></li>
+										<li><img src="/static/img1/lunbo014.png"/></li>
+										<li><img src="/static/img1/lunbo015.png"/></li>
+										<li><img src="/static/img1/lunbo016.png"/></li>
+									</ul>
+                        			</div>
+                        	</div>
+                        </div>
+                    </div>
+                	
+                </div>
+            </div>
+        </div>
+{% endblock %}

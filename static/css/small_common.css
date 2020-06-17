@@ -1,0 +1,66 @@
+@charset "utf-8";
+*{margin: 0 ;padding: 0;}
+
+#container{width: 85%;height: auto;margin: 0 auto;}
+/*--------------头部------------------------------*/
+#head{height: 100px;width: 100%;}
+#head img{float: left;}
+#head h1{float: left;margin-top: 25px;font-size: 25px;font-weight: 100;}
+#foot table{width: ;color: #979797;font-size:12px;margin: 0 auto;text-align: center;}
+#foot ul{height: 12px;margin-left: 50px;}
+#foot li{list-style: none;float: left;}
+#foot a{text-decoration: none;color: #979797;border-right:1px solid silver ;padding:0 5px;}
+/*-------------------------------验证码部分----------------------------------*/
+#ehong-code-input{
+
+	width:42px;
+	letter-spacing:2px;
+	margin:0px 8px 0px 0px;
+}
+.ehong-idcode-val{
+	position:relative;
+	padding:9px 18px 9px 18px;
+	top:0px;
+	*top:-3px;
+	letter-spacing:4px;
+	display:inline;
+	cursor:pointer;
+	font-size:16px;
+	font-family:"Courier New", Courier, monospace;
+	text-decoration:none;
+	font-weight:bold;
+}
+.ehong-idcode-val0{
+	border:solid 1px #A4CDED;	
+	background-color:#ECFAFB;
+}
+
+.ehong-idcode-val1{
+	border:solid 1px #A4CDED;	
+	background-color:#FCEFCF;
+}
+.ehong-idcode-val2{
+	border:solid 1px #6C9;	
+	background-color:#D0F0DF;
+}
+.ehong-idcode-val3{
+	border:solid 1px #6C9;	
+	background-color:#DCDDD8;
+}
+.ehong-idcode-val4{
+	border:solid 1px #6C9;	
+	background-color:#F1DEFF;
+}
+.ehong-idcode-val5{
+	border:solid 1px #6C9;	
+	background-color:#ACE1F1;
+}
+.ehong-code-val-tip{
+	font-size:12px;
+	color:#1098EC;
+	top:0px;
+	*top:-3px;	
+	position:relative;	
+	margin:0px 0px 0px 4px;
+	cursor:pointer;	
+}

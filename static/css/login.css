@@ -1,0 +1,31 @@
+@charset "utf-8";
+#content{padding: 40px 30px;}
+#content #img{float:left;width: 60%;height:400px;}
+#content #login{float:left;width: 40%;height:400px;}
+#foot table{padding-top: 70px;}
+#login #box1{width: 100%;height: auto;border: 1px solid silver;}
+#login h3{font-weight: 100;font-size:16px;padding: 10px 0;}
+#login h3 span{float: right;font-size: 12px;border: 1px solid  #76AB25;background:#FFEDBF;line-height: 12px;padding:5px 10px;}
+#box1 li{list-style: none;float: left;width: 32.8%;border: 1px solid silver;padding: 5px 0;text-align: center;}
+.box{padding: 0px 30px;font-size: 12px;margin: 20px 0;}
+.box input[type=text],.box input[type=password],.box input[type=button]{height: 36px;width: 320px;border: 1px solid silver;}
+.box input[type=button]{background: #76AB25;color: #fff;font-size: 16px;border: none;border-radius: 4px;}
+.box dt{padding: 20px 0 5px 0;}
+.box dd{padding: 0;}
+.box p{float: right;line-height: 25px;}
+.box input[type=text]{background: url(../img/user.png) no-repeat 280px center;}
+.box input[type=password]{background: url(../img/password.png) no-repeat 280px center;}
+.box a{color: #669801;text-decoration: none;}
+#box2{border: 1px solid silver;font-size: 12px;color: #646464;padding: 20px 30px;width: 84.5%;}
+#box2 li{float: left; list-style: none;height: 20px;line-height: 20px;}
+#box2 a{text-decoration: none;padding:0 5px;border-right:1px solid #669801;color: #669801;}
+.wrong{display:none;position: relative;width: 97%;border: 1px solid orange;color: orange;font-size: 12px;line-height: 20px;background: peachpuff;left: 0;top: 0px;}
+
+
+
+
+
+
+
+
+

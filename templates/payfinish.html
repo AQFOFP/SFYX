@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>首页</title>
+{% endblock %}
+
+{% load static %}
+{% block cssjs %}
+    <link rel="stylesheet" href="{% static 'css/payfinish.css' %}">
+{% endblock %}
+
+{% block content %}
+		<div id="top2">
+			<div id="top22">
+                <a href="{% url 'homes:home' %}"><img src="/static/img/logonew.png" /></a>
+                <div style="width: 300px; height: 50px; color: white; line-height: 50px; text-align: center;  display: inline-block; margin-left: 300px; background: #66CC99" >支付结果</div>
+			</div>
+			
+		</div>
+
+
+        <div class="context" id="context2" >
+        	<div>
+
+                <p><span>订单支付成功，请等待商家发货！！！</span><a href="{% url 'orders:orderlist' %}">去订单页面>></a></p>
+
+        	</div>
+        </div>
+
+
+    <script>
+        $.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+        })
+    </script>
+{% endblock %}
+
+{% block cart %}
+
+{% endblock %}
+

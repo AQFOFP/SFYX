@@ -1,0 +1,737 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>首页</title>
+{% endblock %}
+
+{% load static %}
+{% block cssjs %}
+    <script src="{% static 'js/index.js' %} "></script>
+{% endblock %}
+
+{% block content %}
+<div id="top1">
+    <div id="header">
+        <img src="/static/img/logo.png" id="logo" />
+        <div id="pic"><img src="/static/img/small_pic.png"/><img src="/static/img/small1.png" style="display: none;"/></div>
+        <div id="search">
+            <input type="text" placeholder="月饼"/><input type="button" value="搜索" />
+            <ul>
+                <li><a href="#">大闸蟹</a></li>
+                <li><a href="#">牛排</a></li>
+                <li><a href="#">牛奶</a></li>
+                <li><a href="#">石榴</a></li>
+                <li><a href="#">酸奶</a></li>
+                <li><a href="#">白虾</a></li>
+                <li><a href="#">大米</a></li>
+                <li><a href="#">猕猴桃</a></li>
+                <li><a href="#">海外直采</a></li>
+            </ul>
+        </div>
+        <ul id="nav">
+            <li><a href="#" id="all">精选商品分类</a></li>
+            <li><a href="#" id="a1">首页</a></li>
+            <li><a href="#">优选生鲜</a></li>
+            <li><a href="#">全球美食</a></li>
+            <li><a href="#">优选厨房</a></li>
+            <li><a href="#">新品尝鲜</a></li>
+            <li><a href="#">优选国际</a></li>
+            <li><a href="#">企业专区</a></li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div id="content1">
+        {# 轮播图#}
+        <div id="box4">
+            <ul id="ul2">
+                {% for lumain in lumains %}
+                    <li><img src="{{ lumain.imgaddr }}" alt=""></li>
+                {% endfor %}
+                
+            </ul>
+             <ul id="ul3">
+            </ul>
+        </div>
+
+        <ul id="ul4">
+
+            <li style="background: url(/static/img/1.png) no-repeat #76AB25;background-position: 0px 15px;">
+                <p><a href="#">肉类海鲜</a></p>
+                <p><a href="#">大闸蟹</a><a href="#">牛肉</a><a href="#">虾</a><a href="#">羊肉</a></p>
+                <div class="box1" style="background: url(/static/img/22.png) no-repeat #fff; background-position: right bottom;display: none;">
+                    <ul>
+                        <li><a href="" class="a1">精品肉类</a></li>
+                        <li><a href="">牛肉</a></li>
+                        <li><a href="">羊肉</a></li>
+                        <li><a href="">猪肉</a></li>
+                        <li><a href="">禽类</a></li>
+                        <li><a href="">腌腊肉品</a></li>
+                        <li><a href="">肉类礼盒</a></li>
+                        <li><a href="" class="a2">澳洲牛肉</a></li>
+                        <li><a href="" class="a2">牛排</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">海鲜水产</a></li>
+                        <li><a href="">虾</a></li>
+                        <li><a href="">鱼</a></li>
+                        <li><a href="">蟹/贝</a></li>
+                        <li><a href="">参鲍</a></li>
+                        <li><a href="">海鲜礼盒</a></li>
+                        <li><a href="">其他水产</a></li>
+                        <li><a href="" class="a2">白虾</a></li>
+                        <li><a href="" class="a2">鳕鱼</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">速冻食品</a></li>
+                        <li><a href="">中国式面点</a></li>
+                        <li><a href="">西式面点</a></li>
+                        <li><a href="">西式料理</a></li>
+                        <li><a href="">加工水产</a></li>
+                        <li><a href="">其他肉类</a></li>
+                        <li><a href="" class="a2">饺子</a></li>
+                        <li><a href="" class="a2">披萨</a></li>
+                    </ul>
+                </div>
+
+            </li>
+            <li style="background: url(/static/img/1.png) no-repeat #76AB25;background-position: 0px 15px;">
+                <p><a href="#">熟食蛋奶</a></p>
+                <p><a href="#">熟食</a><a href="#">蛋品</a><a href="#">低温奶</a></p>
+                <div class="box1" style="background: url(/static/img/22.png) no-repeat #fff; background-position: right bottom;display: none;">
+                    <ul>
+                        <li><a href="" class="a1">肉类熟食</a></li>
+                        <li><a href="">香肠</a></li>
+                        <li><a href="">火腿</a></li>
+                        <li><a href="">培根</a></li>
+                        <li><a href="">其他熟食</a></li>
+                        <li><a href="" class="a2">荷美尔</a></li>
+                        <li><a href="" class="a2">月盛斋</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">蛋品</a></li>
+                        <li><a href="">鸡蛋</a></li>
+                        <li><a href="">松花蛋/咸鸭蛋</a></li>
+                        <li><a href="" class="a2">德青源</a></li>
+                        <li><a href="" class="a2">百年栗园</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">冷藏奶品饮品</a></li>
+                        <li><a href="">低温奶</a></li>
+                        <li><a href="">奶制品</a></li>
+                        <li><a href="">冷藏果汁</a></li>
+                        <li><a href="">奶酪</a></li>
+                        <li><a href="">黄油</a></li>
+                        <li><a href="">酸奶</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">速食食品</a></li>
+                        <li><a href="">冰淇淋</a></li>
+                        <li><a href="">冷冻甜点/a></li>
+                        <li><a href="" class="a2">哈根达斯</a></li>
+                        <li><a href="" class="a2">Yeekwan</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li style="background: url(/static/img/3.png) no-repeat #76AB25;background-position: 0px 15px;">
+                <p><a href="#">水果蔬菜</a></p>
+                <p><a href="#">水果</a><a href="#">蔬菜</a></p>
+                <div class="box1" style="background: url(/static/img/33.png) no-repeat #fff; background-position: right bottom;display: none;">
+                    <ul>
+                        <li><a href="" class="a1">水果</a></li>
+                        <li><a href="">车厘子/樱桃</a></li>
+                        <li><a href="">橙类</a></li>
+                        <li><a href="">柚类</a></li>
+                        <li><a href="">柠檬</a></li>
+                        <li><a href="">苹果</a></li>
+                        <li><a href="">牛油果</a></li>
+                        <li><a href="">香蕉</a></li>
+                        <li><a href="">火龙果</a></li>
+                        <li><a href="">菠萝/凤梨</a></li>
+                        <li><a href="">奇异果/猕猴桃</a></li>
+                        <li><a href="">梨</a></li>
+                        <li><a href="">提子/葡萄</a></li>
+                        <li><a href="">瓜类</a></li>
+                        <li><a href="">桃/李/杏</a></li>
+                        <li><a href="">木瓜/龙眼/芒果</a></li>
+                        <li><a href="">原厂地水果</a></li>
+                        <li><a href="">冷冻水果</a></li>
+                        <li><a href="">其他</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">蔬菜</a></li>
+                        <li><a href="">有机蔬菜</a></li>
+                        <li><a href="">根茎/瓜果</a></li>
+                        <li><a href="">菌菇类</a></li>
+                        <li><a href="">叶类</a></li>
+                        <li><a href="">茄果/花菜/豆</a></li>
+                        <li><a href="">特色蔬菜</a></li>
+                        <li><a href="">加工蔬菜</a></li>
+                        <li><a href="">礼盒/券</a></li>
+                        <li><a href="" class="a2">加利利</a></li>
+                        <li><a href="" class="a2">黄瓜</a></li>
+                    </ul>
+                </div>
+
+            </li>
+            <li style="background: url(/static/img/4.png) no-repeat #76AB25;background-position: 0px 15px;">
+                <p><a href="#">酒水饮料</a></p>
+                <p><a href="#">葡萄酒</a><a href="#">啤酒</a><a href="#">白酒</a><a href="#">牛奶</a></p>
+                <div class="box1" style="background: url(/static/img/44.png) no-repeat #fff; background-position: right bottom;display: none;">
+                    <ul>
+                        <li><a href="" class="a1">葡萄酒</a></li>
+                        <li><a href="">红葡萄酒</a></li>
+                        <li><a href="">白葡萄酒</a></li>
+                        <li><a href="">桃红葡萄酒</a></li>
+                        <li><a href="">香槟酒</a></li>
+                        <li><a href="">起泡酒</a></li>
+                        <li><a href="">甜酒/贵腐酒</a></li>
+                        <li><a href="">整箱装</a></li>
+                        <li><a href="">礼盒</a></li>
+                        <li><a href="" class="a2">列级庄</a></li>
+                        <li><a href="" class="a2">中级庄</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">洋酒</a></li>
+                        <li><a href="">威士忌</a></li>
+                        <li><a href="">福特加</a></li>
+                        <li><a href="">白兰地</a></li>
+                        <li><a href="">利口酒</a></li>
+                        <li><a href="">朗姆酒</a></li>
+                        <li><a href="">预调酒</a></li>
+                        <li><a href="">礼盒</a></li>
+                        <li><a href="">其他</a></li>
+                        <li><a href="" class="a2">芝华士</a></li>
+                        <li><a href="" class="a2">马爹利</a></li>
+                        <li><a href="" class="a2">人头马</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">洋酒</a></li>
+                        <li><a href="">黑啤</a></li>
+                        <li><a href="">黄啤</a></li>
+                        <li><a href="">白啤</a></li>
+                        <li><a href="">果味啤酒</a></li>
+                        <li><a href="">量版装啤酒</a></li>
+                        <li><a href="" class="a2">比利时啤酒</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">白酒</a></li>
+                        <li><a href="">茅台</a></li>
+                        <li><a href="">五粮液</a></li>
+                        <li><a href="">剑南春</a></li>
+                        <li><a href="">洋河</a></li>
+                        <li><a href="">郎酒</a></li>
+                        <li><a href="">牛栏山</a></li>
+                        <li><a href="">其他品牌</a></li>
+                        <li><a href="">整箱装</a></li>
+                        <li><a href="" class="a2">白云边</a></li>
+                        <li><a href="" class="a2">古井贡</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">其他酒品</a></li>
+                        <li><a href="">黄酒</a></li>
+                        <li><a href="">养生酒</a></li>
+                        <li><a href="" class="a2">竹叶青</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">牛奶乳品</a></li>
+                        <li><a href="">牛奶</a></li>
+                        <li><a href="">低温奶</a></li>
+                        <li><a href="">酸奶</a></li>
+                        <li><a href="">礼盒</a></li>
+                        <li><a href="" class="a2">韦沃</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">饮料/水</a></li>
+                        <li><a href="">碳酸饮料</a></li>
+                        <li><a href="">果蔬饮料</a></li>
+                        <li><a href="">茶饮料</a></li>
+                        <li><a href="">水</a></li>
+                        <li><a href="">咖啡饮料</a></li>
+                        <li><a href="">其他饮料</a></li>
+                        <li><a href="" class="a2">巴黎水</a></li>
+                        <li><a href="" class="a2">伯朗</a></li>
+                    </ul>
+                </div>
+
+            </li>
+            <li style="background: url(/static/img/5.png) no-repeat #76AB25;background-position: 0px 15px;">
+                <p><a href="#">休闲食品</a></p>
+                <p><a href="#">巧克力</a><a href="#">坚果</a><a href="#">曲奇</a><a href="#">月饼</a></p>
+                <div class="box1" style="background: url(/static/img/55.png) no-repeat #fff; background-position: right bottom;display: none;">
+                    <ul>
+                        <li><a href="" class="a1">休闲零食</a></li>
+                        <li><a href="">果干</a></li>
+                        <li><a href="">肉类零食</a></li>
+                        <li><a href="">果冻</a></li>
+                        <li><a href="">年节礼盒</a></li>
+                        <li><a href="">其他零食</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">坚果炒货</a></li>
+                        <li><a href="">扁桃仁/巴旦木</a></li>
+                        <li><a href="">开心果</a></li>
+                        <li><a href="">腰果</a></li>
+                        <li><a href="">松子</a></li>
+                        <li><a href="">瓜子</a></li>
+                        <li><a href="">花生</a></li>
+                        <li><a href="">其他</a></li>
+                        <li><a href="" class="a2">万多福</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">糖果/巧克力</a></li>
+                        <li><a href="">巧克力</a></li>
+                        <li><a href="">糖果</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">饼干糕点</a></li>
+                        <li><a href="">曲奇</a></li>
+                        <li><a href="">饼干</a></li>
+                        <li><a href="">糕点</a></li>
+                        <li><a href="">威化</a></li>
+                        <li><a href="" class="a2">奇华</a></li>
+                        <li><a href="" class="a2">祖母</a></li>
+                        <li><a href="" class="a2">捷森</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">季节性食品</a></li>
+                        <li><a href="">月饼</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li style="background: url(/static/img/6.png) no-repeat #76AB25;background-position: 0px 15px;">
+                <p><a href="#">冲调茶饮</a></p>
+                <p><a href="#">蜂蜜</a><a href="#">咖啡</a><a href="#">麦片</a><a href="#">茶</a></p>
+                <div class="box1" style="background: url(/static/img/66.png) no-repeat #fff; background-position: right bottom;display:none;">
+                    <ul>
+                        <li><a href="" class="a1">休闲冲饮</a></li>
+                        <li><a href="">蜂蜜</a></li>
+                        <li><a href="">麦片/粥</a></li>
+                        <li><a href="">蜜炼茶</a></li>
+                        <li><a href="">巧克力粉</a></li>
+                        <li><a href="">奶茶</a></li>
+                        <li><a href="">天然谷物粉</a></li>
+                        <li><a href="" class="a2">麦卢卡</a></li>
+                        <li><a href="" class="a2">柚子茶</a></li>
+                        <li><a href="" class="a2">维多麦</a></li>
+                        <li><a href="" class="a2">果酱/涂抹酱</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">咖啡/伴侣</a></li>
+                        <li><a href="">速溶咖啡</a></li>
+                        <li><a href="">咖啡粉/豆</a></li>
+                        <li><a href="">调糖/伴侣</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">进口茶</a></li>
+                        <li><a href="">红茶</a></li>
+                        <li><a href="">花茶/果茶</a></li>
+                        <li><a href="">其他进口茶</a></li>
+                        <li><a href="" class="a2">斯里兰卡</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">国产茗茶</a></li>
+                        <li><a href="">绿茶</a></li>
+                        <li><a href="">红茶</a></li>
+                        <li><a href="">白茶</a></li>
+                        <li><a href="">乌龙茶</a></li>
+                        <li><a href="">黑茶/普洱茶</a></li>
+                        <li><a href="">花草茶/果茶</a></li>
+                        <li><a href="">其他国产茗茶</a></li>
+                        <li><a href="" class="a2">铁观音</a></li>
+                        <li><a href="" class="a2">大红袍</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li style="background: url(/static/img/7.png) no-repeat #76AB25;background-position: 0px 15px;">
+                <p><a href="#">粮油干货</a></p>
+                <p><a href="#">橄榄油</a><a href="#">大米</a><a href="#">枣</a></p>
+                <div class="box1" style="background: url(/static/img/77.png) no-repeat #fff; background-position: right bottom;display:none">
+                    <ul>
+                        <li><a href="" class="a1">食用油</a></li>
+                        <li><a href="">橄榄油</a></li>
+                        <li><a href="">礼盒</a></li>
+                        <li><a href="">其他食用油</a></li>
+                        <li><a href="" class="a2">欧丽薇兰</a></li>
+                        <li><a href="" class="a2">希腊橄榄油</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">米面杂粮</a></li>
+                        <li><a href="">大米</a></li>
+                        <li><a href="">意大利面</a></li>
+                        <li><a href="">面粉/面条</a></li>
+                        <li><a href="">杂粮</a></li>
+                        <li><a href="">礼盒</a></li>
+
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">厨房调料</a></li>
+                        <li><a href="">酱油/醋</a></li>
+                        <li><a href="">调味油/汁</a></li>
+                        <li><a href="">调味料/粉/酱</a></li>
+                        <li><a href="">调味酱/番茄酱</a></li>
+
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">方便速食</a></li>
+                        <li><a href="">速食面/汤</a></li>
+                        <li><a href="">速食馒头</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">南北干货</a></li>
+                        <li><a href="">和田枣</a></li>
+                        <li><a href="">其他枣类</a></li>
+                        <li><a href="">香菇</a></li>
+                        <li><a href="">茶树菇</a></li>
+                        <li><a href="">猴头菇</a></li>
+                        <li><a href="">其他菌菇</a></li>
+                        <li><a href="">木耳</a></li>
+                        <li><a href="">银耳</a></li>
+                        <li><a href="">枸杞</a></li>
+                        <li><a href="">莲子</a></li>
+                        <li><a href="">紫菜</a></li>
+                        <li><a href="">其他干货</a></li>
+                        <li><a href="">桂圆</a></li>
+                        <li><a href="">礼盒装</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li style="background: url(/static/img/8.png) no-repeat #76AB25;background-position: 0px 15px;">
+                <p><a href="#">优选国际</a></p>
+                <p><a href="#">奶粉</a><a href="#">纸尿裤</a><a href="#">韩妆</a><a href="#">保健</a></p>
+                <div class="box1" style="background: url(/static/img/88.png) no-repeat #fff; background-position: right bottom;display:none">
+                    <ul>
+                        <li><a href="" class="a1">母婴食品</a></li>
+                        <li><a href="">一段</a></li>
+                        <li><a href="">二段</a></li>
+                        <li><a href="">三段</a></li>
+                        <li><a href="">四段</a></li>
+                        <li><a href="">羊奶粉</a></li>
+                        <li><a href="">有机奶粉</a></li>
+                        <li><a href="">辅食</a></li>
+                        <li><a href="">米粉/米糊</a></li>
+                        <li><a href="">宝宝零食</a></li>
+                        <li><a href="">营养品</a></li>
+                        <li><a href="">钙铁锌</a></li>
+                        <li><a href="">维生素</a></li>
+                        <li><a href="">DHA</a></li>
+
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">母婴用品</a></li>
+                        <li><a href="">纸尿裤</a></li>
+                        <li><a href="">拉拉裤</a></li>
+                        <li><a href="">婴儿湿巾</a></li>
+                        <li><a href="">婴儿洗护</a></li>
+                        <li><a href="">洗发沐浴</a></li>
+                        <li><a href="">婴儿护肤</a></li>
+                        <li><a href="">防蚊驱虫</a></li> 								                             	<li><a href="">口腔护理</a></li>
+                        <li><a href="">喂养用品</a></li>
+                        <li><a href="">妈妈用品</a></li>
+
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">美妆个户</a></li>
+                        <li><a href="">面部护理</a></li>
+                        <li><a href="">缤纷彩妆</a></li>
+                        <li><a href="">口腔护理</a></li>
+                        <li><a href="">美发护发</a></li>
+                        <li><a href="">沐浴用品</a></li>
+                        <li><a href="">女士护理</a></li>
+                        <li><a href="">面膜</a></li>
+                        <li><a href="">防晒</a></li>
+                        <li><a href="">洁面</a></li>
+                        <li><a href="">护肤套装</a></li>
+                        <li><a href="">BB霜</a></li>
+                        <li><a href="">隔离</a></li>
+                        <li><a href="">牙膏</a></li>
+                        <li><a href="">洗护发</a></li>
+                        <li><a href="">沐浴露</a></li>
+                        <li><a href="">卫生巾</a></li>
+                        <li><a href="">女生洗液</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="" class="a1">营养保健</a></li>
+                        <li><a href="">营养补充</a></li>
+                        <li><a href="">健康养护</a></li>
+                        <li><a href="">女士保养</a></li>
+                        <li><a href="">男士保健</a></li>
+                        <li><a href="">关爱老年</a></li>
+                        <li><a href="">滋补养生</a></li>
+                        <li><a href="" class="a2">Swisse</a></li>
+                        <li><a href="" class="a2">澳洲保健</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <ul id="ul5">
+            {% for luside in lusides %}
+                <li><a href="#"><img src="{{ luside.imgaddr }}" alt=""><div class="box3"></div></a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="content" id="back">
+    <div id="content2">
+        <h1>优选必买<span>/口碑甄选&nbsp;超值好货/</span></h1>
+        <table>
+            {% csrf_token %}
+            <tr>
+                {% for yxbm in yxbms %}
+                    {% if forloop.counter <= 4 %}
+                        <td class='td'><a href="{% url 'homes:goodsdetail' yxbm.id %}">
+                            <img class='goodsImg' src="{{ yxbm.goodsimg }}" alt="">
+                            <em >￥</em>
+                            <em class='goodsPrice' style="padding-left:20px">{{ yxbm.price }}</em>
+                            <i style='display:none' class='goodsName'>{{ yxbm.goodsname }}/{{ yxbm.weight }}kg</i>
+                            <i style='display:none' class='goodsWeight'>{{ yxbm.weight }}</i>
+                            <i style='display:none' class='goodsAllprice'>{{ yxbm.allprice }}</i>
+                            <i style='display:none' class='goodsPrivilege'>{{ yxbm.privilege }}</i>
+                            <span style='display:none' class='goodsId'>{{ yxbm.id }}</span>
+                        </a></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for yxbm in yxbms %}
+                    {% if forloop.counter > 4 %}
+                        <td class='td'><a href="{% url 'homes:goodsdetail' yxbm.id %}">
+                            <img class='goodsImg' src="{{ yxbm.goodsimg }}" alt="">
+                            <em >￥</em>
+                            <em class='goodsPrice' style="padding-left:20px">{{ yxbm.price }}</em>
+                            <i style='display:none' class='goodsName'>{{ yxbm.goodsname }}/{{ yxbm.weight }}kg</i>
+                            <i style='display:none' class='goodsWeight'>{{ yxbm.weight }}</i>
+                            <i style='display:none' class='goodsAllprice'>{{ yxbm.allprice }}</i>
+                            <i style='display:none' class='goodsPrivilege'>{{ yxbm.privilege }}</i>
+                            <span style='display:none' class='goodsId'>{{ yxbm.id }}</span>
+                        </a></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        </table>
+        <div id="news">
+            <img src="/static/img/news.jpg" alt="" />
+            <h2>最新动态<span>更多></span></h2>
+            <ul>
+                <li><a href="">购买燕麦片满49元抽奖活动中奖公告</a></li>
+                <li><a href="">满299抽iPhone6s活动中奖公告</a></li>
+                <li><a href="">《珍膳米，带你冲上云霄》活动中奖</a></li>
+                <li><a href="">福佳白啤酒抽奖活动中奖公告</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content">
+
+    <div id="content3">
+        <div id="c3_left">
+        <h1><span class="clock">
+                <i></i>
+                还剩<em class="time_d"></em>天<em class="time_h"></em>时<em class="time_m"></em>分<em class="time_s"></em>秒结束
+            </span>
+            <span>下期预告></span>
+        </h1>
+        <table>
+            <tr>
+                <td><a href=""><img src="/static/img/xianshiqianghou1.jpg" alt="" />
+                    <p>捷森 葵花籽黑麦面包 500g</p>
+                    <p><em>￥12.3</em><input type="button" value="抢购"/></p>
+                </a></td>
+                <td><a href=""><img src="/static/img/xianshiqianghou2.jpg" alt="" />
+                    <p>小胖子TC BOY 金枪鱼（植</p>
+                    <p><em>￥15.3</em><input type="button" value="抢购"/></p>
+                </a></td>
+                <td><a href=""><img src="/static/img/xianshiqianghou3.jpg" alt="" />
+                    <p>丹麦皇冠 天然谷饲通脊肉 </p>
+                    <p><em>￥16.3</em><input type="button" value="抢购"/></p>
+                </a></td>
+                <td><a href=""><img src="/static/img/xianshiqianghou4.jpg" alt="" />
+                    <p>百尚PAYSAN 布里奶酪 </p>
+                    <p><em>￥18.3</em><input type="button" value="抢购"/></p>
+                </a></td>
+                <td><a href=""><img src="/static/img/xianshiqianghou5.jpg" alt="" />
+
+                    <p>北纯 有机黄豆 350g</p>
+                    <p><em>￥15.3</em><input type="button" value="抢购"/></p>
+                </a></td>
+            </tr>
+        </table>
+        </div>
+        <img src="/static/img/xianshiqianggou111.jpg" alt="" id="img2" />
+    </div>
+</div>
+<div class="content">
+    <div class="content4">
+        <hr style="border-bottom: 1px solid #669801 ;margin: 0;padding: 0;width: 99%;" />
+        <div class="c4_left">
+            <img class="img1" src="/static/img/fruit.png"/>
+            <img src="/static/img/fruit.jpg" />
+        </div>
+        <table class="c4_center">
+            <tr>
+                <td><a href=""><img src="/static/img/vegetable.jpg" alt="" />
+                <p>台湾麻豆文旦柚4-5个</p>
+                <p><span>￥79.9</span></p>
+                </a></td>
+                <td><a href=""><img src="/static/img/vegetable1.jpg" alt="" />
+                <p>台湾麻豆文旦柚4-5个</p>
+                <p><span>￥79.9</span></p>
+                </a></td>
+                <td><a href=""><img src="/static/img/vegetable2.jpg" alt="" />
+                <p>平和琯溪红心蜜柚2颗</p>
+                <p><span>￥34.9</span></p>
+                </a></td>
+                <td><a href=""><img src="/static/img/vegetable3.jpg" alt="" />
+                <p>平和琯溪红心蜜柚2颗</p>
+                <p><span>￥34.9</span></p>
+                </a></td>
+            </tr>
+            <tr>
+                <td><a href=""><img src="/static/img/vegetable4.jpg" alt="" />
+                <p>平和琯溪红心蜜柚2颗</p>
+                <p><span>￥34.9</span></p>
+                </a></td>
+                <td><a href=""><img src="/static/img/vegetable5.jpg" alt="" />
+                <p>平和琯溪红心蜜柚2颗</p>
+                <p><span>￥34.9</span></p>
+                </a></td>
+                <td><a href=""><img src="/static/img/vegetable6.jpg" alt="" />
+                <p>平和琯溪红心蜜柚2颗</p>
+                <p><span>￥34.9</span></p>
+                </a></td>
+                <td><a href=""><img src="/static/img/vegetable7.jpg" alt="" />
+                <p>平和琯溪红心蜜柚2颗</p>
+                <p><span>￥34.9</span></p>
+                </a></td>
+            </tr>
+        </table>
+        <div class="c4_right">
+            <table cellspacing="10px">
+                <tr>
+                    <td><a href="">蓝莓</a></td>
+                    <td><a href="">椰青</a></td>
+                    <td><a href="">火龙果</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">水蜜桃</a></td>
+                    <td><a href="">牛油果</a></td>
+                    <td><a href="">佳沛</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">新奇士</a></td>
+                    <td><a href="">加工蔬菜</a></td>
+                    <td><a href="">加利利</a></td>
+                </tr>
+            </table>
+            <img src="/static/img/vegetable_fruit.jpg" />
+            <div class="ball">></div>
+        </div>
+    </div>
+    <img src="/static/img/vegetable_fruit22.jpg" class="img2"/>
+</div>
+<div class="content11">
+    <div id="content5">
+        <div id="div2_left">
+            <h1><img src="/static/img/1212.png"/>优选味道</h1>
+            <hr />
+            <img src="/static/img/xiaolunbo.jpg" />
+            <ul>
+            <li><a href="">花草茶 来自大自然的恩惠</a></li>
+            <li><a href="">酒桌礼仪：斟酒的讲究</a></li>
+            <li><a href="">30分钟 暖心慢炖红酒鸡腿</a></li>
+            <li><a href="">拉弗尔庄园（花庄）</a></li>
+            <li><a href="">喜欢甜酒 何罪之有？</a></li>
+            </ul>
+        </div>
+        <div id="div2_center">
+            <h1><img src="/static/img/1212.png" />热门晒单</h1>
+            <hr />
+            <ul>
+            <li><a href=""><img src="/static/img/00000009.jpg" alt="" />
+                <p><span>荷美尔Hormel 经典香煎培根 120g*5</span></p>
+                <p>“包装好，送货快，食材新鲜，冷链配送棒极了！”</p>
+            </a></li>
+            <li><a href=""><img src="/static/img/00000000.jpg" alt="" />
+                <p><span>墨西哥牛油果420g（3个装）</span></p>
+                <p>“包装好，送货快，已多次购买，味道好极了！”</p>
+            </a></li>
+            </ul>
+        </div>
+        <div  id="div2_right">
+            <h1><img src="/static/img/12121.png" />发现优品</h1>
+            <hr />
+            <ul>
+                <li><a href=""><img src="/static/img/123.png" alt="" /></a></li>
+                <li><a href=""><img src="/static/img/1232.png" alt="" /></a></li>
+                <li><a href=""><img src="/static/img/1231.png" alt="" /></a></li>
+                <li><a href=""><img src="/static/img/1233.png" alt="" /></a></li>
+            </ul>
+            <p>
+            <input type="text"placeholder="请填写邮箱订阅促销" />
+            <div id="span1">北京<div id="box3">
+                <h2><em>北京></em><em>请选择></em><i><img src="/static/img/close.png" /></i></h2>
+                    <hr />
+                    <table>
+                        <tr>
+                            <td><a href="">北京</a></td>
+                            <td><a href="">天津</a></td>
+                            <td><a href="">上海</a></td>
+                            <td><a href="">重庆</a></td>
+                            <td><a href="">广东省</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">浙江省</a></td>
+                            <td><a href="">江苏省</a></td>
+                            <td><a href="">福建省</a></td>
+                            <td><a href="">辽宁省</a></td>
+                            <td><a href="">吉林省</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">黑龙江省</a></td>
+                            <td><a href="">江西省</a></td>
+                            <td><a href="">河北省</a></td>
+                            <td><a href="">河南省</a></td>
+                            <td><a href="">山东省</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">山西省</a></td>
+                            <td><a href="">湖北省</a></td>
+                            <td><a href="">湖南省</a></td>
+                            <td><a href="">云南省</a></td>
+                            <td><a href="">海南省</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">陕西省</a></td>
+                            <td><a href="">四川省</a></td>
+                            <td><a href="">安徽省</a></td>
+                            <td><a href="">贵州省</a></td>
+                            <td><a href="">甘肃省</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">青海省</a></td>
+                            <td><a href="">广西</a></td>
+                            <td><a href="">内蒙古</a></td>
+                            <td><a href="">宁夏</a></td>
+                            <td><a href="">新疆</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">西藏</a></td>
+                            <td><a href=""></a></td>
+                            <td><a href=""></a></td>
+                            <td><a href=""></a></td>
+                            <td><a href=""></a></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <input type="button" value="订阅" />
+            <em>订阅更多></em>
+
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
